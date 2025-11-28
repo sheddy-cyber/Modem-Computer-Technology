@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Accessories Gallery - Modem Computer Technology</title>
+  <meta name="description" content="Browse our collection of computer accessories, peripherals, and equipment - Modem Computer Technology" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="css/style2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <img src="images/logo1.jpg" alt="Modem Computer Technology" class="logo" />
+        <div class="brand-text">
+          <div class="company">Modem Computer Technology</div>
+          <div class="slogan">Quality IT Training • Maintenance • Sales • Procurement</div>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="../index.html#home">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#courses">Courses</a></li>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-outline" href="/mnt/data/Advanced Course Outline.pdf" target="_blank" rel="noopener">
+          <i data-lucide="download" class="icon"></i>
+          Course Outline
+        </a>
+        <button id="menuToggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="section-label">Our Products</span>
+          <h1 class="section-title">Computer Accessories Gallery</h1>
+          <p class="muted">Explore our extensive collection of 100+ quality computer accessories, peripherals, and equipment. Click any item for a detailed view.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+      <div class="wrap">
+        <div class="filter-controls">
+          <button class="filter-btn active" data-category="all">
+            <i data-lucide="grid-3x3" class="icon"></i>
+            All Items
+          </button>
+          <button class="filter-btn" data-category="keyboards">
+            <i data-lucide="keyboard" class="icon"></i>
+            Keyboards & Mice
+          </button>
+          <button class="filter-btn" data-category="monitors">
+            <i data-lucide="monitor" class="icon"></i>
+            Monitors
+          </button>
+          <button class="filter-btn" data-category="cables">
+            <i data-lucide="cable" class="icon"></i>
+            Cables & Adapters
+          </button>
+          <button class="filter-btn" data-category="storage">
+            <i data-lucide="hard-drive" class="icon"></i>
+            Storage
+          </button>
+          <button class="filter-btn" data-category="accessories">
+            <i data-lucide="usb" class="icon"></i>
+            Other Accessories
+          </button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid"></div>
+
+        <div class="load-more-container">
+          <button class="btn btn-primary" id="loadMoreBtn">
+            <i data-lucide="plus-circle" class="icon"></i>
+            Load More Items
+          </button>
+          <div class="items-count" id="itemsCount">Showing 0 of 0 items</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="imageModal">
+    <button class="modal-close" id="modalClose">
+      <i data-lucide="x" class="icon"></i>
+    </button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap footer-content">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand">
+            <img src="images/logo1.jpg" alt="Modem Computer Technology" class="footer-logo" />
+            <div class="company">Modem Computer Technology</div>
+          </div>
+          <p class="muted">Building Nigeria's tech workforce through practical and quality, industry-focused training.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">
+              <i data-lucide="facebook" class="icon"></i>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <i data-lucide="twitter" class="icon"></i>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <i data-lucide="instagram" class="icon"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <i data-lucide="linkedin" class="icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#courses">Courses</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="accessories.html">Accessories Gallery</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul class="footer-links">
+            <li><a href="/mnt/data/Advanced Course Outline.pdf" target="_blank" rel="noopener">Course Outline</a></li>
+            <li><a href="index.html#courses">Admission</a></li>
+            <li><a href="index.html#contact">Visit Campus</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <ul class="footer-contact">
+            <li>
+              <i data-lucide="map-pin" class="icon-sm"></i>
+              <span>Elemoro Shopping Complex, Bogije, Ibeju-Lekki</span>
+            </li>
+            <li>
+              <i data-lucide="phone" class="icon-sm"></i>
+              <a href="tel:+2348032310325">+234 803 231 0325</a>
+            </li>
+            <li>
+              <i data-lucide="mail" class="icon-sm"></i>
+              <a href="mailto:modemcomputers247@gmail.com">modemcomputers247@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 <strong>Modem Computer Technology</strong>. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="js/script2.js"></script>
+</body>
+</html>
