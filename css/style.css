@@ -1227,7 +1227,7 @@ main {
   gap:20px;
   flex-wrap:wrap
 }
-.footer-bottom p{
+.footer-bottom p {
   margin:0;
   font-size:14px;
   color:var(--muted)

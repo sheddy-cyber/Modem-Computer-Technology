@@ -1,6 +1,6 @@
     const accessories = [
       // Keyboards & Mice
-      { name: "Wireless Keyboard", category: "keyboards", image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400&h=300&fit=crop" },
+      { name: "Wireless Keyboard", category: "keyboards", image: "images/hdmi_cable.png"},
       { name: "Gaming Mouse RGB", category: "keyboards", image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&h=300&fit=crop" },
       { name: "Mechanical Keyboard", category: "keyboards", image: "https://images.unsplash.com/photo-1601445638532-3c6f6c3aa1d6?w=400&h=300&fit=crop" },
       { name: "Ergonomic Mouse", category: "keyboards", image: "https://images.unsplash.com/photo-1563297007-0686b7003af7?w=400&h=300&fit=crop" },
