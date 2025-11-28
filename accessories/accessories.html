@@ -53,8 +53,8 @@
       <div class="wrap">
         <div class="section-header">
           <span class="section-label">Our Products</span>
-          <h1 class="section-title">Computer Accessories Gallery</h1>
-          <p class="muted">Explore our extensive collection of 100+ quality computer accessories, peripherals, and equipment. Click any item for a detailed view.</p>
+          <h1 class="section-title">Laptops & Computer Accessories Gallery</h1>
+          <p class="muted">Explore our extensive collection of 100+ quality laptops and computer accessories, peripherals, and equipment. Click any item for a detailed view.</p>
         </div>
       </div>
     </section>
@@ -67,7 +67,7 @@
             <i data-lucide="grid-3x3" class="icon"></i>
             All Items
           </button>
-          <button class="filter-btn">
+          <button class="filter-btn" data-category="laptops">
             <i data-lucide="laptop" class="icon"></i>
             Laptops & Printers
           </button>
@@ -92,15 +92,17 @@
             Other Accessories
           </button>
         </div>
-
-        <div class="gallery-grid" id="galleryGrid"></div>
-
-        <div class="load-more-container">
-          <button class="btn btn-primary" id="loadMoreBtn">
-            <i data-lucide="plus-circle" class="icon"></i>
-            Load More Items
-          </button>
-          <div class="items-count" id="itemsCount">Showing 0 of 0 items</div>
+    
+        <div class="gallery-container">
+          <div class="gallery-grid" id="galleryGrid"></div>
+    
+          <div class="load-more-container">
+            <button class="btn btn-primary" id="loadMoreBtn">
+              <i data-lucide="plus-circle" class="icon"></i>
+              Load More Items
+            </button>
+            <div class="items-count" id="itemsCount">Showing 0 of 0 items</div>
+          </div>
         </div>
       </div>
     </section>

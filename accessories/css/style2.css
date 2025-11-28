@@ -26,16 +26,37 @@
   font-size: 18px;
 }
 
-/* Filter buttons */
+/* Gallery Section */
 .gallery-section {
-    padding: 0;
+  padding: 0;
+  padding-top: 2px; /* Minimal gap after hero */
 }
+
+.gallery-section .wrap {
+  position: relative;
+}
+
+/* Filter buttons - Sticky */
 .filter-controls {
+  position: sticky;
+  top: 76px; 
+  z-index: 50;
+  background: var(--bg);
+  padding: 20px 0;
+  margin: 0 -24px 20px;
+  padding-left: 24px;
+  padding-right: 24px;
   display: flex;
   gap: 8px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Gallery container to limit sticky behavior */
+.gallery-container {
+  min-height: 100vh; 
 }
 
 .filter-btn {
@@ -215,4 +236,22 @@
 .modal-info .item-name {
   font-size: 22px;
   margin: 0 0 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filter-controls {
+    top: 70px; /* Adjust for smaller navbar on mobile */
+    padding: 15px 0;
+    gap: 6px;
+  }
+  
+  .filter-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  
+  .gallery-section {
+    margin-top: 80px;
+  }
 }
