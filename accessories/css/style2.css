@@ -29,7 +29,7 @@
 /* Gallery Section */
 .gallery-section {
   padding: 0;
-  padding-top: 2px; /* Minimal gap after hero */
+  padding-top: 5px; /* Minimal gap after hero */
 }
 
 .gallery-section .wrap {
@@ -39,11 +39,11 @@
 /* Filter buttons - Sticky */
 .filter-controls {
   position: sticky;
-  top: 76px; 
+  top: 76px; /* Height of your navbar + small gap */
   z-index: 50;
   background: var(--bg);
   padding: 20px 0;
-  margin: 0 -24px 20px;
+  margin: 0 -24px 20px; /* Negative margin to extend to edges */
   padding-left: 24px;
   padding-right: 24px;
   display: flex;
@@ -51,12 +51,12 @@
   justify-content: center;
   flex-wrap: wrap;
   opacity: 1;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, top 0.35s ease;
 }
 
 /* Gallery container to limit sticky behavior */
 .gallery-container {
-  min-height: 100vh; 
+  min-height: 100vh; /* Ensures enough content for proper sticky behavior */
 }
 
 .filter-btn {
@@ -236,22 +236,4 @@
 .modal-info .item-name {
   font-size: 22px;
   margin: 0 0 10px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .filter-controls {
-    top: 70px; /* Adjust for smaller navbar on mobile */
-    padding: 15px 0;
-    gap: 6px;
-  }
-  
-  .filter-btn {
-    padding: 8px 12px;
-    font-size: 13px;
-  }
-  
-  .gallery-section {
-    margin-top: 80px;
-  }
 }

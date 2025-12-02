@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Modem Computer Technology — Training & Services</title>
   <meta name="description" content="Modem Computer Technology — Computer training, maintenance, sales and office procurement. Elemoro Shopping Complex, Bogije Bus-stop, Ibeju-Lekki, Lagos State." />
+  <link rel="favicon" href="images/favicon-16x16.png" type="image/png">
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Basic Open Graph -->
+  <meta property="og:title" content="Modem Computer Technology — Training & Services">
+  <meta property="og:description" content="Practical computer training, maintenance and procurement in Ibeju-Lekki, Lagos.">
+  <meta property="og:type" content="website">
 </head>
 
 <body>
@@ -18,7 +24,7 @@
   <header class="site-header">
     <div class="wrap">
       <div class="brand">
-        <img src="images/logo1.jpg" alt="Modem Computer Technology" class="logo" />
+        <img src="images/logo1.png" alt="Modem Computer Technology" class="logo" />
         <div class="brand-text">
           <div class="company">Modem Computer Technology</div>
           <div class="slogan">Quality IT Training • Maintenance • Sales • Procurement</div>
@@ -37,7 +43,7 @@
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-outline" href="/mnt/data/Advanced Course Outline.pdf" target="_blank" rel="noopener">
+        <a class="btn btn-outline" href="docs/Course Outline.pdf" target="_blank" rel="noopener">
           <i data-lucide="download" class="icon"></i>
           Course Outline
         </a>
@@ -85,7 +91,7 @@
         </div>
 
         <div class="hero-media" aria-hidden="true">
-          <img src="images/computer_lab.jpg" alt="" />
+          <img src="images/computer_lab.jpg" alt="Computer lab with students" loading="lazy" />
           <div class="hero-stats">
             <div class="stat">
               <i data-lucide="users" class="icon"></i>
@@ -156,7 +162,7 @@
             </li>
           </ul>
 
-          <a class="link" href="/mnt/data/Advanced Course Outline.pdf" target="_blank" rel="noopener">
+          <a class="link" href="docs/Course Outline.pdf" target="_blank" rel="noopener">
             <i data-lucide="file-text" class="icon"></i>
             Download full course outline (PDF)
           </a>
@@ -164,7 +170,9 @@
 
         <div class="col">
           <div class="card photo-card">
-            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=700&fit=crop" alt="Computer lab training session" />
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=700&fit=crop"
+                 alt="Computer lab training session"
+                 loading="lazy" />
             <div class="photo-overlay">
               <i data-lucide="play-circle" class="icon"></i>
               <span>See our facilities</span>
@@ -332,7 +340,7 @@
             <i data-lucide="send" class="icon"></i>
             Register Now
           </a>
-          <a class="link" href="/mnt/data/Advanced Course Outline.pdf" target="_blank" rel="noopener">
+          <a class="link" href="docs/Course Outline.pdf" target="_blank" rel="noopener">
             <i data-lucide="external-link" class="icon"></i>
             View full syllabus
           </a>
@@ -540,11 +548,13 @@
           </div>
         </div>
 
-        <form id="contactForm" class="col form-card" onsubmit="return false;" novalidate>
+        <form id="contactForm" class="col form-card" method="post" action="#" >
           <h3>
             <i data-lucide="message-square" class="icon"></i>
             Enquiry / Registration
           </h3>
+
+          <div id="formStatus" role="status" aria-live="polite" class="form-status" hidden></div>
           
           <div class="form-group">
             <label for="name">
@@ -559,7 +569,7 @@
               <i data-lucide="phone" class="icon-sm"></i>
               Phone number
             </label>
-            <input id="phone" name="phone" type="tel" placeholder="+234 803 231 0325" required>
+            <input id="phone" name="phone" type="tel" inputmode="tel" pattern="[\d+\s\-()]{6,}" placeholder="+234 803 231 0325" required>
           </div>
 
           <div class="form-group">
@@ -567,7 +577,7 @@
               <i data-lucide="mail" class="icon-sm"></i>
               Email (optional)
             </label>
-            <input id="email" name="email" type="email" placeholder="your.email@example.com">
+            <input id="email" name="email" type="email" inputmode="email" placeholder="your.email@example.com">
           </div>
 
           <div class="form-group">
@@ -591,15 +601,15 @@
               <i data-lucide="message-circle" class="icon-sm"></i>
               Message
             </label>
-            <textarea id="message" name="message" rows="7" placeholder="Any message or preferred schedule"></textarea>
+            <textarea id="message" name="message" rows="7" placeholder="Any message or particular item of enquiry..."></textarea>
           </div>
 
           <div class="form-actions">
-            <button id="submitBtn" class="btn btn-primary" type="button">
+            <button id="submitBtn" class="btn btn-primary" type="submit">
               <i data-lucide="send" class="icon"></i>
               Send Enquiry
             </button>
-            <button id="resetBtn" class="btn btn-ghost" type="button">
+            <button id="resetBtn" class="btn btn-ghost" type="reset">
               <i data-lucide="rotate-ccw" class="icon"></i>
               Reset
             </button>
@@ -615,7 +625,7 @@
       <div class="footer-grid">
         <div class="footer-col">
           <div class="footer-brand">
-            <img src="images/logo1.jpg" alt="Modem Computer Technology" class="footer-logo" />
+            <img src="images/logo1.png" alt="Modem Computer Technology" class="footer-logo" />
             <div class="company">Modem Computer Technology</div>
           </div>
           <p class="muted">Building Nigeria's tech workforce through practical and quality, industry-focused training.</p>
@@ -649,7 +659,7 @@
         <div class="footer-col">
           <h4>Resources</h4>
           <ul class="footer-links">
-            <li><a href="/mnt/data/Advanced Course Outline.pdf" target="_blank" rel="noopener">Course Outline</a></li>
+            <li><a href="docs/Course Outline.pdf" target="_blank" rel="noopener">Course Outline</a></li>
             <li><a href="#courses">Admission</a></li>
             <li><a href="#contact">Visit Location</a></li>
           </ul>
@@ -668,10 +678,7 @@
             </li>
             <li>
               <i data-lucide="mail" class="icon-sm"></i>
-              <a href="mailto:modemcomputers247@gmail.com" 
-              onclick="navigator.clipboard.writeText('modemcomputers247@gmail.com'); alert('Email copied to clipboard!'); return true;">
-              modemcomputers247@gmail.com
-              </a>
+              <a href="mailto:modemcomputers247@gmail.com">modemcomputers247@gmail.com</a>
             </li>
           </ul>
         </div>
@@ -687,10 +694,6 @@
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
-  <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
-  </script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>
