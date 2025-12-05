@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script type="module"  src="./js/script.js"></script>
 </head>
 
 <body>
@@ -532,7 +533,7 @@
           </div>
         </div>
 
-        <form id="contactForm" class="col form-card" onsubmit="return false;" novalidate>
+        <form id="contactForm" class="col form-card" method="POST" action="http://127.0.0.1:5501/register" >
           <h3>
             <i data-lucide="message-square" class="icon"></i>
             Enquiry / Registration
@@ -587,7 +588,7 @@
           </div>
 
           <div class="form-actions">
-            <button id="submitBtn" class="btn btn-primary" type="button">
+            <button id="submitBtn" class="btn btn-primary" type="submit">
               <i data-lucide="send" class="icon"></i>
               Send Enquiry
             </button>
@@ -679,7 +680,6 @@
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
   <script>
     // Initialize Lucide icons
     lucide.createIcons();

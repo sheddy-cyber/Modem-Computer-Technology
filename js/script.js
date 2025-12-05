@@ -194,6 +194,7 @@
     const form = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
     const resetBtn = document.getElementById('resetBtn');
+    
 
     if (!form || !submitBtn || !resetBtn) return;
 
@@ -237,10 +238,11 @@
       lucide.createIcons();
     };
 
-    submitBtn.addEventListener('click', async (e) => {
+    submitBtn.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const formData = {
+
+      let formData = {
         name: document.getElementById('name').value,
         phone: document.getElementById('phone').value,
         email: document.getElementById('email').value,
@@ -257,7 +259,7 @@
           return;
         }
       }
-
+      console.log(formData);
       setButtonState(true);
 
       // Simulate submission
@@ -267,6 +269,18 @@
         setButtonState(false);
         console.log('Form Data:', formData);
       }, 1500);
+
+       const response = await fetch("http://127.0.0.1:5501/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+        console.log(result);
+      
     });
 
     resetBtn.addEventListener('click', () => {
@@ -276,6 +290,8 @@
         if (message) message.remove();
       }
     });
+    
+   
   })();
 
   // SCROLL ANIMATIONS MODULE
