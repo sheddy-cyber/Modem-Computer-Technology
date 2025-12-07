@@ -29,7 +29,7 @@
 /* Gallery Section */
 .gallery-section {
   padding: 0;
-  padding-top: 5px; /* Minimal gap after hero */
+  padding-top: 5px;
 }
 
 .gallery-section .wrap {
@@ -39,11 +39,11 @@
 /* Filter buttons - Sticky */
 .filter-controls {
   position: sticky;
-  top: 76px; /* Height of your navbar + small gap */
+  top: 76px;
   z-index: 50;
   background: var(--bg);
-  padding: 20px 0;
-  margin: 0 -24px 20px; /* Negative margin to extend to edges */
+  padding: 15px 0;
+  margin: 0 -24px 20px;
   padding-left: 24px;
   padding-right: 24px;
   display: flex;
