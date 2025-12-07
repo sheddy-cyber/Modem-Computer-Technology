@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <meta property="og:title" content="Modem Computer Technology — Training & Services">
+  <meta property="og:description" content="Practical computer training, maintenance and procurement in Ibeju-Lekki, Lagos.">
+  <meta property="og:type" content="website">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -17,7 +20,7 @@
   <header class="site-header">
     <div class="wrap">
       <div class="brand">
-        <img src="images/logo1.jpg" alt="Modem Computer Technology" class="logo" />
+        <img src="images/logo1.png" alt="Modem Computer Technology" class="logo" />
         <div class="brand-text">
           <div class="company">Modem Computer Technology</div>
           <div class="slogan">Quality IT Training • Maintenance • Sales • Procurement</div>
@@ -36,7 +39,7 @@
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-outline" href="/mnt/data/Advanced Course Outline.pdf" target="_blank" rel="noopener">
+        <a class="btn btn-outline" href="../docs/Course Outline.pdf" target="_blank" rel="noopener">
           <i data-lucide="download" class="icon"></i>
           Course Outline
         </a>
@@ -53,8 +56,8 @@
       <div class="wrap">
         <div class="section-header">
           <span class="section-label">Our Products</span>
-          <h1 class="section-title">Computer Accessories Gallery</h1>
-          <p class="muted">Explore our extensive collection of 100+ quality computer accessories, peripherals, and equipment. Click any item for a detailed view.</p>
+          <h1 class="section-title">Laptops & Computer Accessories Gallery</h1>
+          <p class="muted">Explore our extensive collection of 100+ quality laptops and computer accessories, peripherals, and equipment. Click any item for a detailed view.</p>
         </div>
       </div>
     </section>
@@ -67,7 +70,7 @@
             <i data-lucide="grid-3x3" class="icon"></i>
             All Items
           </button>
-          <button class="filter-btn">
+          <button class="filter-btn" data-category="laptops">
             <i data-lucide="laptop" class="icon"></i>
             Laptops & Printers
           </button>
@@ -92,15 +95,17 @@
             Other Accessories
           </button>
         </div>
-
-        <div class="gallery-grid" id="galleryGrid"></div>
-
-        <div class="load-more-container">
-          <button class="btn btn-primary" id="loadMoreBtn">
-            <i data-lucide="plus-circle" class="icon"></i>
-            Load More Items
-          </button>
-          <div class="items-count" id="itemsCount">Showing 0 of 0 items</div>
+    
+        <div class="gallery-container">
+          <div class="gallery-grid" id="galleryGrid"></div>
+    
+          <div class="load-more-container">
+            <button class="btn btn-primary" id="loadMoreBtn">
+              <i data-lucide="plus-circle" class="icon"></i>
+              Load More Items
+            </button>
+            <div class="items-count" id="itemsCount">Showing 0 of 0 items</div>
+          </div>
         </div>
       </div>
     </section>
@@ -119,7 +124,7 @@
       <div class="footer-grid">
         <div class="footer-col">
           <div class="footer-brand">
-            <img src="images/logo1.jpg" alt="Modem Computer Technology" class="footer-logo" />
+            <img src="images/logo1.png" alt="Modem Computer Technology" class="footer-logo" />
             <div class="company">Modem Computer Technology</div>
           </div>
           <p class="muted">Building Nigeria's tech workforce through practical and quality, industry-focused training.</p>
@@ -153,7 +158,7 @@
         <div class="footer-col">
           <h4>Resources</h4>
           <ul class="footer-links">
-            <li><a href="/mnt/data/Advanced Course Outline.pdf" target="_blank" rel="noopener">Course Outline</a></li>
+            <li><a href="../docs/Course Outline.pdf" target="_blank" rel="noopener">Course Outline</a></li>
             <li><a href="index.html#courses">Admission</a></li>
             <li><a href="index.html#contact">Visit Campus</a></li>
           </ul>
