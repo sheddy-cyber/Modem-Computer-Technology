@@ -290,6 +290,7 @@
       }
     };
 
+    form.addEventListener('submit', async (e) => {
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
 

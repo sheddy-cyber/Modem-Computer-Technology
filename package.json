@@ -1,6 +1,7 @@
 {
   "name": "modem-computer-technology",
   "version": "1.0.0",
+  "description": "A modern computer technology website with a registration form that sends email notifications upon submission.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
