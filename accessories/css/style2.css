@@ -26,16 +26,37 @@
   font-size: 18px;
 }
 
-/* Filter buttons */
+/* Gallery Section */
 .gallery-section {
-    padding: 0;
+  padding: 0;
+  padding-top: 5px;
 }
+
+.gallery-section .wrap {
+  position: relative;
+}
+
+/* Filter buttons - Sticky */
 .filter-controls {
+  position: sticky;
+  top: 76px;
+  z-index: 50;
+  background: var(--bg);
+  padding: 15px 0;
+  margin: 0 -24px 20px;
+  padding-left: 24px;
+  padding-right: 24px;
   display: flex;
   gap: 8px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  opacity: 1;
+  transition: opacity 0.3s ease, top 0.35s ease;
+}
+
+/* Gallery container to limit sticky behavior */
+.gallery-container {
+  min-height: 100vh; /* Ensures enough content for proper sticky behavior */
 }
 
 .filter-btn {
