@@ -42,7 +42,7 @@ app.post("/register", (req, res) => {
     from: `"Your Website" <${process.env.EMAIL_USER}>`,
     to: "idikechinaza@gmail.com",
     subject: "New Registration Form Submission",
-     text: `New registration:\n
+    text: `New registration:\n
         Name: ${formData.name}\n
         Phone: ${formData.phone}\n
         Email: ${formData.email}\n
