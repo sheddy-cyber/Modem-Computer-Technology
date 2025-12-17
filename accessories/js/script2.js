@@ -518,6 +518,11 @@ const accessories = [
   {
     name: "Wifi Security Camera",
     category: "accessories",
+    image: "images/others/camera3.jpg",
+  },
+  {
+    name: "Wifi Security Camera",
+    category: "accessories",
     image: "images/others/camera.jpg",
   },
   {
