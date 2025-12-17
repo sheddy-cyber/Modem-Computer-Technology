@@ -202,22 +202,22 @@ const accessories = [
     image: "images/cables/adapter20.png",
   },
   {
-    name: "USB Charger",
+    name: "Laptop Charger",
     category: "cables",
     image: "images/cables/charger.jpeg",
   },
   {
-    name: "USB Charger (Fast)",
+    name: "Laptop Charger",
     category: "cables",
     image: "images/cables/charger2.jpeg",
   },
   {
-    name: "USB Charger (Compact)",
+    name: "Laptop Charger",
     category: "cables",
     image: "images/cables/charger3.jpeg",
   },
   {
-    name: "Power Adapter",
+    name: "Laptop Charger",
     category: "cables",
     image: "images/cables/charger4.jpg",
   },
