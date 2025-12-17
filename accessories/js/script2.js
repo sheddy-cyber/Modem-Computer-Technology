@@ -11,7 +11,7 @@ const accessories = [
     image: "images/laptops/elitebook2.jpg",
   },
   {
-    name: "HP EliteBook 840 G5 (Dark)",
+    name: "HP EliteBook 840 G5",
     category: "laptops",
     image: "images/laptops/elitebook3.jpg.webp",
   },
@@ -227,12 +227,12 @@ const accessories = [
     image: "images/cables/hdmi.png",
   },
   {
-    name: "HDMI Cable (Short)",
+    name: "HDMI Cable (Long)",
     category: "cables",
     image: "images/cables/hdmi2.jpg",
   },
   {
-    name: "HDMI Cable (Long)",
+    name: "HDMI Cable (Short)",
     category: "cables",
     image: "images/cables/hdmi3.jpg",
   },
@@ -364,7 +364,7 @@ const accessories = [
     image: "images/storage/hdd.jpg",
   },
   {
-    name: "2TB External HDD",
+    name: "1TB External HDD",
     category: "storage",
     image: "images/storage/hdd2.jpg",
   },
@@ -409,14 +409,9 @@ const accessories = [
     image: "images/storage/hddcase6.png",
   },
   {
-    name: "Memory Card 128GB",
-    category: "storage",
-    image: "images/storage/memory-card.png",
-  },
-  {
     name: "Memory Card 64GB",
     category: "storage",
-    image: "images/storage/memory-card2.jpg",
+    image: "images/storage/memory-card.png",
   },
   {
     name: "Micro SD Card",
@@ -424,7 +419,7 @@ const accessories = [
     image: "images/storage/memory-card3.png",
   },
   {
-    name: "SD Card",
+    name: "128GB SD Card",
     category: "storage",
     image: "images/storage/memory-card4.png",
   },
@@ -446,7 +441,7 @@ const accessories = [
 
   // Other Accessories
   {
-    name: "5000mAh Powerbank",
+    name: "50000mAh Powerbank",
     category: "accessories",
     image: "images/others/powerbank.webp",
   },
