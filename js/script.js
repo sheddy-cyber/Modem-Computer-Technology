@@ -42,11 +42,12 @@
   (() => {
     const menuToggle = document.getElementById("menuToggle");
     const nav = document.getElementById("nav");
+    const header = document.querySelector(".site-header");
 
     if (!menuToggle || !nav) return;
 
     const closeMenu = () => {
-      nav.style.display = "";
+      nav.classList.remove("show");
       menuToggle.setAttribute("aria-expanded", "false");
       menuToggle.classList.remove("active");
     };
@@ -58,13 +59,15 @@
       if (isExpanded) {
         closeMenu();
       } else {
-        nav.style.display = "block";
+        nav.classList.add("show");
         menuToggle.classList.add("active");
       }
     };
-
     // Event listeners
-    menuToggle.addEventListener("click", toggleMenu);
+    menuToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
 
     nav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
@@ -75,7 +78,7 @@
     document.addEventListener("click", (e) => {
       if (
         utils.isMobile() &&
-        nav.style.display === "block" &&
+        nav.classList.contains("show") &&
         !nav.contains(e.target) &&
         !menuToggle.contains(e.target)
       ) {
@@ -91,42 +94,76 @@
     );
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && nav.style.display === "block") {
+      if (e.key === "Escape" && nav.classList.contains("show")) {
         closeMenu();
       }
     });
+
+    // Close menu when header hides/shows (on scroll)
+    if (header) {
+      const observer = new MutationObserver(() => {
+        if (
+          header.classList.contains("hide-header") &&
+          nav.classList.contains("show")
+        ) {
+          // Optionally close menu when header hides
+          // closeMenu();
+        }
+      });
+
+      observer.observe(header, {
+        attributes: true,
+        attributeFilter: ["class"],
+      });
+    }
   })();
 
   // HEADER SCROLL EFFECTS MODULE
+  // HEADER SCROLL EFFECTS MODULE - FIXED
   (() => {
     const header = document.querySelector(".site-header");
     if (!header) return;
-
-    let lastScroll = window.scrollY;
-
-    const updateHeader = utils.throttle(() => {
-      const currentScroll = window.scrollY;
-
+  
+    let lastScroll = 0;
+    let ticking = false;
+  
+    const updateHeader = () => {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  
+      console.log("Scrolling:", currentScroll, "Last:", lastScroll);
+  
       // Hide/show header
-      if (
-        currentScroll > lastScroll &&
-        currentScroll > CONFIG.hideHeaderThreshold
-      ) {
+      if (currentScroll > lastScroll && currentScroll > 100) {
         header.classList.add("hide-header");
-      } else {
+        console.log("Hide header");
+      } else if (currentScroll < lastScroll) {
         header.classList.remove("hide-header");
+        console.log("Show header");
       }
-
+  
       // Update shadow
-      header.style.boxShadow =
-        currentScroll > 10
-          ? "0 4px 16px rgba(0,0,0,0.08)"
-          : "0 2px 8px rgba(0,0,0,0.04)";
-
-      lastScroll = currentScroll;
-    }, 100);
-
-    window.addEventListener("scroll", updateHeader);
+      if (currentScroll > 10) {
+        header.style.boxShadow = "0 4px 16px rgba(0,0,0,0.08)";
+      } else {
+        header.style.boxShadow = "0 2px 8px rgba(0,0,0,0.04)";
+      }
+  
+      lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+      ticking = false;
+    };
+  
+    const requestTick = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    };
+  
+    // Listen to both window scroll and document scroll
+    window.addEventListener("scroll", requestTick, { passive: true });
+    document.addEventListener("scroll", requestTick, { passive: true });
+  
+    console.log("Header scroll module initialized");
   })();
 
   // NAVIGATION HIGHLIGHTING MODULE

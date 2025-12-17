@@ -112,7 +112,7 @@ const accessories = [
     image: "images/cables/adapter2.png",
   },
   {
-    name: "USB Hub 7-Port",
+    name: "USB-C Hub 7-Port",
     category: "cables",
     image: "images/cables/adapter3.png",
   },
@@ -132,12 +132,12 @@ const accessories = [
     image: "images/cables/adapter6.png",
   },
   {
-    name: "Ethernet Coupler / RJ45 Adapter",
+    name: "USB-A and Type-C Flashdrive",
     category: "cables",
     image: "images/cables/adapter7.jpg",
   },
   {
-    name: "USB Extension Cable",
+    name: "USB-A and Type-C Flashdrive",
     category: "cables",
     image: "images/cables/adapter8.jpg",
   },

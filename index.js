@@ -27,20 +27,20 @@ console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "Loaded" : "NOT Loaded");
 const transporter = nodemailer.createTransport({
   service: "gmail", // use 'gmail', not host
   auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS, // App password, not normal Gmail password
+    user: "modemcomputers247@gmail.com",
+    pass: "objo yxhe pbwo ajsx", // App password, not normal Gmail password
   },
 });
 
 
 app.post("/register", (req, res) => {
-  console.log("🔥 POST /register hit");
+  console.log("POST /register hit");
   const formData = req.body;
   console.log("Registration form received:", formData);
 
   const mailOptions = {
-    from: `"Your Website" <${process.env.EMAIL_USER}>`,
-    to: "idikechinaza@gmail.com",
+    from: `"Your Website" <modemcomputers247@gmail.com>`,
+    to: "modemcomputers247@gmail.com",
     subject: "New Registration Form Submission",
     text: `New registration:\n
         Name: ${formData.name}\n
