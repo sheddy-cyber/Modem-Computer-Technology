@@ -444,30 +444,6 @@
     });
   })();
 
-  // PHONE NUMBER COPY FEATURE
-  (() => {
-    document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
-      link.addEventListener("click", function (e) {
-        if (!navigator.clipboard) return;
-
-        const phoneNumber = this.textContent;
-        navigator.clipboard
-          .writeText(phoneNumber)
-          .then(() => {
-            const tooltip = document.createElement("span");
-            tooltip.className = "phone-tooltip";
-            tooltip.textContent = "Phone number copied!";
-
-            this.parentElement.style.position = "relative";
-            this.parentElement.appendChild(tooltip);
-
-            setTimeout(() => tooltip.remove(), 2000);
-          })
-          .catch(() => {});
-      });
-    });
-  })();
-
   // LAZY LOADING IMAGES
   (() => {
     if (!("IntersectionObserver" in window)) return;

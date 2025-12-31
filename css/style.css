@@ -1358,12 +1358,10 @@ main {
 
 /* ========================================
    MOBILE RESPONSIVENESS
-   Add this to the end of your style.css
    ======================================== */
 
 /* Tablets and below (900px to match JavaScript CONFIG) */
 @media (max-width: 900px) {
-  /* Fix page shift - prevent horizontal scroll */
   html {
     overflow-x: hidden;
     overflow-y: auto;
@@ -1396,7 +1394,7 @@ main {
     overflow: visible;
   }
 
-  /* HEADER - Mobile - Don't override existing behavior */
+  /* HEADER */
   .site-header .wrap {
     padding: 12px 0;
   }

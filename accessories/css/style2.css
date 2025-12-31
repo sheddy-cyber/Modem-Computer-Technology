@@ -308,7 +308,7 @@ span {
 }
 
 /* ========================================
-   ACCESSORIES PAGE MOBILE RESPONSIVENESS
+   MOBILE RESPONSIVENESS
    ======================================== */
 
 /* Tablets and below (900px to match JavaScript CONFIG) */
@@ -327,7 +327,7 @@ span {
     padding: 0 10px;
   }
 
-  /* Filter Controls - Mobile optimized */
+  /* Filter Controls */
   .filter-controls {
     z-index: 50;
     background: var(--bg);
@@ -372,7 +372,7 @@ span {
     height: 16px;
   }
 
-  /* Gallery Grid - Responsive columns */
+  /* Gallery Grid */
   .gallery-grid {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 16px;
@@ -451,7 +451,7 @@ span {
     min-width: unset;
   }
 
-  /* Modal - Mobile optimized */
+  /* Modal */
   .modal {
     padding: 10px;
   }
