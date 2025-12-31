@@ -40,7 +40,7 @@ span {
 /* Filter buttons - Sticky */
 .filter-controls {
   position: sticky;
-  top: 76px;
+  top: 73px;
   z-index: 50;
   background: var(--bg);
   padding: 15px 0;
@@ -57,7 +57,7 @@ span {
 
 /* Gallery container to limit sticky behavior */
 .gallery-container {
-  min-height: 100vh; /* Ensures enough content for proper sticky behavior */
+  min-height: 100vh;
 }
 
 .filter-btn {
@@ -164,6 +164,74 @@ span {
   font-weight: 600;
 }
 
+/* Enquiry Section */
+.enquiry-section {
+  margin: 60px 0;
+  padding: 40px 0;
+}
+
+.enquiry-card {
+  background: linear-gradient(135deg, var(--blue-light) 0%, var(--white) 100%);
+  border: 2px solid var(--blue);
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.enquiry-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.enquiry-icon .icon-lg {
+  width: 40px;
+  height: 40px;
+  color: var(--white);
+}
+
+.enquiry-card h3 {
+  font-size: 28px;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+
+.enquiry-card p {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.enquiry-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.enquiry-buttons .btn {
+  min-width: 160px;
+}
+
+.btn-success {
+  background: #25d366;
+  color: var(--white);
+  border: 2px solid #25d366;
+}
+
+.btn-success:hover {
+  background: #20ba5a;
+  border-color: #20ba5a;
+  transform: translateY(-2px);
+}
+
 /* Modal */
 .modal {
   display: none;
@@ -241,7 +309,6 @@ span {
 
 /* ========================================
    ACCESSORIES PAGE MOBILE RESPONSIVENESS
-   Add this to the end of style2.css
    ======================================== */
 
 /* Tablets and below (900px to match JavaScript CONFIG) */
@@ -262,8 +329,6 @@ span {
 
   /* Filter Controls - Mobile optimized */
   .filter-controls {
-    position: sticky;
-    top: 80px;
     z-index: 50;
     background: var(--bg);
     margin: 0 0 20px;
@@ -274,15 +339,14 @@ span {
     flex-wrap: nowrap;
     justify-content: flex-start;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
     transition: top 0.35s ease;
   }
 
   .filter-controls::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
+    display: none;
   }
 
-  /* Add padding to first and last filter button */
   .filter-btn:first-child {
     margin-left: 0;
   }
@@ -292,7 +356,6 @@ span {
     padding-right: 14px;
   }
 
-  /* Adjust filter position when header hides */
   .site-header.hide-header ~ main .filter-controls {
     top: 0px;
   }
@@ -349,6 +412,45 @@ span {
     margin-top: 12px;
   }
 
+  /* Enquiry Section - Mobile */
+  .enquiry-section {
+    margin: 40px 0;
+    padding: 30px 0;
+  }
+
+  .enquiry-card {
+    padding: 32px 20px;
+  }
+
+  .enquiry-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .enquiry-icon .icon-lg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .enquiry-card h3 {
+    font-size: 22px;
+  }
+
+  .enquiry-card p {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .enquiry-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .enquiry-buttons .btn {
+    width: 100%;
+    min-width: unset;
+  }
+
   /* Modal - Mobile optimized */
   .modal {
     padding: 10px;
@@ -392,7 +494,6 @@ span {
 
 /* Small phones (480px and below) */
 @media (max-width: 480px) {
-  /* Page Hero */
   .page-hero .section-title {
     font-size: 24px;
   }
@@ -401,9 +502,8 @@ span {
     font-size: 14px;
   }
 
-  /* Filter Controls - Extra compact */
   .filter-controls {
-    padding: 10px 12px;
+    padding: 10px 3px;
     gap: 6px;
   }
 
@@ -418,7 +518,6 @@ span {
     height: 14px;
   }
 
-  /* Gallery Grid - 2 columns on small screens */
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
@@ -442,7 +541,6 @@ span {
     padding: 2px 6px;
   }
 
-  /* Load More */
   .load-more-container {
     margin: 24px 0;
   }
@@ -456,7 +554,14 @@ span {
     font-size: 13px;
   }
 
-  /* Modal */
+  .enquiry-card {
+    padding: 24px 16px;
+  }
+
+  .enquiry-card h3 {
+    font-size: 20px;
+  }
+
   .modal-content {
     max-width: 98%;
     border-radius: 10px;
@@ -532,4 +637,26 @@ span {
   .gallery-section .wrap {
     overflow-x: hidden;
   }
+}
+
+:root {
+  --header-offset: 73px;
+}
+
+/* Desktop */
+.filter-controls.sticky-desktop {
+  position: sticky;
+  top: var(--header-offset);
+  z-index: 40;
+}
+
+/* Mobile */
+.filter-controls.fixed-mobile {
+  position: fixed;
+  top: var(--header-offset);
+  left: 0;
+  right: 0;
+  z-index: 55;
+  background: var(--bg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }

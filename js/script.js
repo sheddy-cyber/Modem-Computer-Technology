@@ -106,8 +106,7 @@
           header.classList.contains("hide-header") &&
           nav.classList.contains("show")
         ) {
-          // Optionally close menu when header hides
-          // closeMenu();
+          closeMenu();
         }
       });
 
@@ -119,19 +118,19 @@
   })();
 
   // HEADER SCROLL EFFECTS MODULE
-  // HEADER SCROLL EFFECTS MODULE - FIXED
   (() => {
     const header = document.querySelector(".site-header");
     if (!header) return;
-  
+
     let lastScroll = 0;
     let ticking = false;
-  
+
     const updateHeader = () => {
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-  
+      const currentScroll =
+        window.pageYOffset || document.documentElement.scrollTop;
+
       console.log("Scrolling:", currentScroll, "Last:", lastScroll);
-  
+
       // Hide/show header
       if (currentScroll > lastScroll && currentScroll > 100) {
         header.classList.add("hide-header");
@@ -140,29 +139,29 @@
         header.classList.remove("hide-header");
         console.log("Show header");
       }
-  
+
       // Update shadow
       if (currentScroll > 10) {
         header.style.boxShadow = "0 4px 16px rgba(0,0,0,0.08)";
       } else {
         header.style.boxShadow = "0 2px 8px rgba(0,0,0,0.04)";
       }
-  
+
       lastScroll = currentScroll <= 0 ? 0 : currentScroll;
       ticking = false;
     };
-  
+
     const requestTick = () => {
       if (!ticking) {
         window.requestAnimationFrame(updateHeader);
         ticking = true;
       }
     };
-  
+
     // Listen to both window scroll and document scroll
     window.addEventListener("scroll", requestTick, { passive: true });
     document.addEventListener("scroll", requestTick, { passive: true });
-  
+
     console.log("Header scroll module initialized");
   })();
 

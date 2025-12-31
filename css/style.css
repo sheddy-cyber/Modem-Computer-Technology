@@ -356,7 +356,7 @@ main {
   align-items: center;
   gap: 10px;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 13.5px;
 }
 
 .info-list li .icon {
