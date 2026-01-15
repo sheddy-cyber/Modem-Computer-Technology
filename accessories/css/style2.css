@@ -329,6 +329,7 @@ span {
 
   /* Filter Controls */
   .filter-controls {
+    top: 9px;
     z-index: 50;
     background: var(--bg);
     margin: 0 0 20px;
