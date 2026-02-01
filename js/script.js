@@ -90,7 +90,7 @@
       "resize",
       utils.debounce(() => {
         if (!utils.isMobile()) closeMenu();
-      }, 150)
+      }, 150),
     );
 
     document.addEventListener("keydown", (e) => {
@@ -187,7 +187,7 @@
           navItems.forEach((item) => {
             item.classList.toggle(
               "active",
-              item.getAttribute("href") === `#${sectionId}`
+              item.getAttribute("href") === `#${sectionId}`,
             );
           });
         }
@@ -206,8 +206,15 @@
 
     let hasAnimated = false;
 
+    // Store original values from HTML
+    const originalValues = Array.from(stats).map((stat) =>
+      stat.textContent.trim(),
+    );
+
     const animateCounter = (element, target, isPercentage) => {
       const numericValue = parseInt(target.replace(/[^0-9]/g, ""));
+      if (isNaN(numericValue)) return;
+
       const increment = numericValue / CONFIG.statsAnimationSteps;
       const stepTime =
         CONFIG.statsAnimationDuration / CONFIG.statsAnimationSteps;
@@ -228,24 +235,44 @@
       }, stepTime);
     };
 
+    const startAnimation = () => {
+      if (hasAnimated) return;
+      hasAnimated = true;
+
+      // Start animation immediately when called
+      stats.forEach((stat, index) => {
+        const target = originalValues[index];
+        const isPercentage = target.includes("%");
+        animateCounter(stat, target, isPercentage);
+      });
+    };
+
     const checkAndAnimate = () => {
       if (hasAnimated) return;
 
       const rect = statsSection.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom >= 0) {
-        hasAnimated = true;
-        stats.forEach((stat) => {
-          const target = stat.textContent;
-          animateCounter(stat, target, target.includes("%"));
-        });
+      const windowHeight =
+        window.innerHeight || document.documentElement.clientHeight;
+
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        startAnimation();
       }
     };
 
-    window.addEventListener("scroll", utils.throttle(checkAndAnimate, 100));
-    checkAndAnimate();
+    const throttledCheck = utils.throttle(checkAndAnimate, 100);
+
+    window.addEventListener("scroll", throttledCheck, { passive: true });
+
+    setTimeout(() => {
+      checkAndAnimate();
+    }, 500);
+
+    window.addEventListener("load", () => {
+      setTimeout(checkAndAnimate, 200);
+    });
   })();
 
-  // FORM HANDLING MODULE - CONSOLIDATED
+  // FORM HANDLING MODULE
   (() => {
     const form = document.getElementById("contactForm");
     const submitBtn = document.getElementById("submitBtn");
@@ -351,11 +378,14 @@
       setButtonState(true);
 
       try {
-        const response = await fetch("http://127.0.0.1:5501/register", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        });
+        const response = await fetch(
+          "http://www.modemcomputertechnology.com/register",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          },
+        );
 
         const result = await response.json();
 
@@ -394,7 +424,7 @@
   // SCROLL ANIMATIONS MODULE
   (() => {
     const elements = document.querySelectorAll(
-      ".course, .service, .testimonial, .feature-icon"
+      ".course, .service, .testimonial, .feature-icon",
     );
     if (!elements.length) return;
 
@@ -406,7 +436,7 @@
         if (rect.top < window.innerHeight - 100) {
           setTimeout(
             () => element.classList.add("animate-in"),
-            index * CONFIG.animationStagger
+            index * CONFIG.animationStagger,
           );
         }
       });
@@ -419,7 +449,7 @@
   // COURSE ENROLLMENT TRACKING
   (() => {
     const courseLinks = document.querySelectorAll(
-      '.course-link, .hero-ctas a[href="#courses"]'
+      '.course-link, .hero-ctas a[href="#courses"]',
     );
 
     courseLinks.forEach((link) => {
@@ -435,7 +465,7 @@
           const matchingOption = Array.from(courseSelect.options).find((opt) =>
             opt.text
               .toLowerCase()
-              .includes(courseName.toLowerCase().split(" ")[0])
+              .includes(courseName.toLowerCase().split(" ")[0]),
           );
 
           if (matchingOption) courseSelect.value = matchingOption.value;
@@ -474,7 +504,7 @@
       photoOverlay.addEventListener("click", (e) => {
         e.preventDefault();
         alert(
-          "Video/Gallery feature: This would open a lightbox or video player showing your facilities."
+          "Video/Gallery feature: This would open a lightbox or video player showing your facilities.",
         );
       });
     }
@@ -482,7 +512,7 @@
 
   // INITIALIZE
   console.log(
-    "✅ Modem Computer Technology - Website Interactive Features Loaded"
+    "✅ Modem Computer Technology - Website Interactive Features Loaded",
   );
   if (window.lucide) lucide.createIcons();
 })();

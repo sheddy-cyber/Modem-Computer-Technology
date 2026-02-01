@@ -1,4 +1,4 @@
-// Additional items to be loaded dynamically (not in initial HTML for SEO)
+// Additional items to be loaded dynamically
 const additionalAccessories = [
   // More Laptops & Printers
   {
@@ -66,7 +66,7 @@ const additionalAccessories = [
     id: "item-21",
   },
   {
-    name: "VGA to HDMI Converter",
+    name: "USB-C Hub",
     category: "cables",
     image: "images/cables/adapter5.png",
     id: "item-23",
@@ -102,37 +102,37 @@ const additionalAccessories = [
     id: "item-28",
   },
   {
-    name: "Micro-USB OTG Adapter",
+    name: "Type-C Hub",
     category: "cables",
     image: "images/cables/adapter11.png",
     id: "item-29",
   },
   {
-    name: "USB to Lightning Adapter",
+    name: "HDMI Splitter",
     category: "cables",
     image: "images/cables/adapter12.png",
     id: "item-30",
   },
   {
-    name: "USB to Serial Adapter",
+    name: "USB-C to Serial Adapter",
     category: "cables",
     image: "images/cables/adapter13.png",
     id: "item-31",
   },
   {
-    name: "USB to VGA Adapter",
+    name: "USB-C to HDMI Adapter",
     category: "cables",
     image: "images/cables/adapter14.png",
     id: "item-32",
   },
   {
-    name: "USB-C to DisplayPort Adapter",
+    name: "USB-C to Card Reader Adapter",
     category: "cables",
     image: "images/cables/adapter15.png",
     id: "item-33",
   },
   {
-    name: "Multiport USB Adapter",
+    name: "USB-C to Multiport Adapter",
     category: "cables",
     image: "images/cables/adapter16.png",
     id: "item-34",
@@ -144,19 +144,19 @@ const additionalAccessories = [
     id: "item-35",
   },
   {
-    name: "USB Power Splitter/Adapter",
+    name: "USB Hub",
     category: "cables",
     image: "images/cables/adapter18.png",
     id: "item-36",
   },
   {
-    name: "Charging/Data Adapter",
+    name: "USB to Multi-adapter Kit",
     category: "cables",
     image: "images/cables/adapter19.png",
     id: "item-37",
   },
   {
-    name: "Multi-adapter Kit",
+    name: "USB to Multi-adapter Kit",
     category: "cables",
     image: "images/cables/adapter20.png",
     id: "item-38",
@@ -180,7 +180,7 @@ const additionalAccessories = [
     id: "item-42",
   },
   {
-    name: "HDMI Cable (Long)",
+    name: "HDMI Cable (30m)",
     category: "cables",
     image: "images/cables/hdmi2.jpg",
     id: "item-44",
@@ -270,25 +270,25 @@ const additionalAccessories = [
     id: "item-59",
   },
   {
-    name: "Printer USB Cable",
+    name: "Printer Cable",
     category: "cables",
     image: "images/cables/printer-cable.webp",
     id: "item-60",
   },
   {
-    name: "Printer USB Cable 2",
+    name: "Printer Cable 2",
     category: "cables",
     image: "images/cables/printer-cable2.jpg",
     id: "item-61",
   },
   {
-    name: "Printer USB Cable 3",
+    name: "Printer Cable 3",
     category: "cables",
     image: "images/cables/printer-cable3.jpg",
     id: "item-62",
   },
   {
-    name: "Printer USB Cable 4",
+    name: "Printer Cable 4",
     category: "cables",
     image: "images/cables/printer-cable4.jpg",
     id: "item-63",
@@ -553,10 +553,10 @@ function getTotalItemCount() {
     return initialItems.length + additionalAccessories.length;
   } else {
     const loadedCount = initialItems.filter(
-      (item) => item.getAttribute("data-category") === currentFilter
+      (item) => item.getAttribute("data-category") === currentFilter,
     ).length;
     const unloadedCount = additionalAccessories.filter(
-      (item) => item.category === currentFilter
+      (item) => item.category === currentFilter,
     ).length;
     return loadedCount + unloadedCount;
   }
@@ -565,7 +565,7 @@ function getTotalItemCount() {
 function getFilteredItems() {
   if (currentFilter === "all") return allGalleryItems;
   return allGalleryItems.filter(
-    (item) => item.getAttribute("data-category") === currentFilter
+    (item) => item.getAttribute("data-category") === currentFilter,
   );
 }
 
@@ -600,17 +600,17 @@ function renderItems() {
 
 function updateUI(totalItems, currentlyLoadedFilteredCount) {
   // actualShowing should be the minimum of:
-  // - displayedCount (how many we want to show)
+  // - displayedCount (how many to be shown)
   // - currentlyLoadedFilteredCount (how many filtered items are actually loaded in DOM)
   // - totalItems (total available including unloaded)
   const actualShowing = Math.min(
     displayedCount,
     currentlyLoadedFilteredCount,
-    totalItems
+    totalItems,
   );
   itemsCount.textContent = `Showing ${actualShowing} of ${totalItems} items`;
 
-  // Determine if we should show "Load More" button
+  // Determine whether to show "Load More" button
   if (actualShowing >= totalItems) {
     // All items are shown
     loadMoreBtn.disabled = true;
@@ -679,7 +679,7 @@ function openModal(item) {
             Call Now
           </a>
           <a href="https://wa.me/2348032310325?text=Hi, I'm interested in ${encodeURIComponent(
-            name
+            name,
           )}" target="_blank" rel="noopener" class="btn btn-success" style="text-decoration: none; font-size: 14px;">
             <i data-lucide="message-circle" class="icon" style="width: 16px; height: 16px;"></i>
             WhatsApp
@@ -745,7 +745,7 @@ lucide.createIcons();
 
     document.documentElement.style.setProperty(
       "--header-offset",
-      offset + "px"
+      offset + "px",
     );
   }
 
